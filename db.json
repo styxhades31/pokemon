@@ -1,0 +1,10 @@
+{
+  "teams": [
+    {
+      "id": 1,
+      "userTeam": [],
+      "enemyTeam": []
+    }
+  ],
+  "battleHistory": []
+}

@@ -1,0 +1,161 @@
+/*RESPONSIVE*/
+
+/* Base container */
+.history-container {
+    margin: 0.5rem 0;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.7rem; /* Smaller base font size */
+  }
+  
+  /* Table styling - more compact */
+  .history-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.815);
+    table-layout: fixed; /* Ensures consistent column widths */
+  }
+  
+  /* Table headers and cells */
+  .history-table th,
+  .history-table td {
+    padding: 0.3rem 0.2rem; /* Reduced padding */
+    border: 1px solid #ddd;
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.2; /* Tighter line spacing */
+    font-size: 0.6rem; /* Smaller font size for cells */
+  }
+  
+  /* Header styling */
+  .history-table th {
+    background-color: #342899;
+    color: #fff;
+    font-size: 0.6rem; /* Smaller header text */
+    padding: 0.4rem 0.2rem; /* Compact header padding */
+    position: sticky;
+    top: 0;
+  }
+  
+  /* Compact stat display */
+  .stat-pair {
+    display: flex;
+    justify-content: center;
+    gap: 0.1rem; /* Reduced gap */
+  }
+  
+  .stat {
+    display: inline-block;
+    min-width: 1.5rem; /* Ensure consistent width for numbers */
+    font-size: 0.6rem; /* Smaller stat font size */
+  }
+  
+  /* Color coding */
+  .stat.green {
+    color: #2e7d32; /* Darker green for better visibility */
+  }
+  
+  .stat.red {
+    color: #c62828; /* Darker red for better visibility */
+  }
+  
+  .stat.gray {
+    color: #616161;
+  }
+  
+  /* Zebra striping for better readability */
+  .history-table tr:nth-child(even) {
+    background-color: rgb(255, 255, 255);
+  }
+  
+  /* Mobile responsive layout */
+  @media (max-width: 768px) {
+    .history-container {
+      font-size: 0.6rem; /* Even smaller on mobile */
+    }
+  
+    .history-table th,
+    .history-table td {
+      padding: 0.2rem 0.1rem; /* Even smaller padding */
+    }
+  
+    /* Hide less important columns on mobile */
+    .history-table th:nth-child(4), /* HP */
+    .history-table th:nth-child(5), /* Attack */
+    .history-table th:nth-child(6), /* Speed */
+    .history-table td:nth-child(4),
+    .history-table td:nth-child(5),
+    .history-table td:nth-child(6) {
+      display: none;
+    }
+  
+    /* Make remaining columns wider */
+    .history-table th:nth-child(1),
+    .history-table td:nth-child(1) {
+      width: 30%; /* Increased width for timestamp */
+    }
+  
+    .history-table th:nth-child(2),
+    .history-table td:nth-child(2),
+    .history-table th:nth-child(3),
+    .history-table td:nth-child(3),
+    .history-table th:nth-child(7),
+    .history-table td:nth-child(7) {
+      width: 23.33%; /* Adjusted width for remaining columns */
+    }
+  }
+  
+  /* Very small mobile devices */
+  @media (max-width: 480px) {
+    .history-table {
+      display: block;
+    }
+  
+    .history-table thead {
+      display: none;
+    }
+  
+    .history-table tr {
+      display: block;
+      margin-bottom: 0.3rem; /* Reduced margin */
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 0.2rem; /* Reduced padding */
+    }
+  
+    .history-table td {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: left;
+      padding: 0.1rem 0.2rem; /* Even smaller padding */
+      border: none;
+      font-size: 0.55rem; /* Even smaller font size */
+    }
+  
+    .history-table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      color: #d62828;
+      margin-right: 0.3rem; /* Reduced margin */
+      flex: 1;
+    }
+  
+    .history-table td > span {
+      flex: 1;
+      text-align: right;
+    }
+  
+    /* Show stat comparisons again in mobile cards */
+    .history-table td:nth-child(4),
+    .history-table td:nth-child(5),
+    .history-table td:nth-child(6) {
+      display: flex;
+    }
+  }
+  .battle-history-title {
+    color: white; /* Set text color to white */
+    font-size: 1.5rem; /* Optional: adjust font size */
+    text-align: center; /* Optional: center the text */
+  }
+  
