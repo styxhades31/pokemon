@@ -22,13 +22,10 @@ const App = () => {
   const [defeatedPokemon, setDefeatedPokemon] = useState([]);
 
   const limit = 20;
-  const TEAM_API = 'http://localhost:3000/teams/1';
-  const HISTORY_API = 'http://localhost:3000/battleHistory';
 
   useEffect(() => {
     fetchAllPokemon();
-    fetchTeams();
-    fetchBattleHistory();
+   
   }, []);
 
   useEffect(() => {
@@ -40,18 +37,7 @@ const App = () => {
     setAllPokemon(res.data.results);
   };
 
-  const fetchTeams = async () => {
-    const res = await axios.get(TEAM_API);
-    setUserTeam(res.data.userTeam);
-    setEnemyTeam(res.data.enemyTeam);
-  };
-
-  const fetchBattleHistory = async () => {
-    const res = await axios.get(HISTORY_API);
-    setBattleHistory(res.data);
-    const defeated = res.data.map(b => b.loser);
-    setDefeatedPokemon(defeated);
-  };
+  
 
   const paginate = async () => {
     let list = allPokemon;
