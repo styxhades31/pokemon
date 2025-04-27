@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PokemonCard from './components/PokemonCard';
 import PokemonDetails from './components/PokemonDetails';
-import './styles.css';
+import './Styles.css';
 import './components/BattleHistory.css';
 
 const App = () => {
